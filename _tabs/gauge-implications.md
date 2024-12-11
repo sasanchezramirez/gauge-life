@@ -8,4 +8,4 @@ order: 5
 
 Aquí encontrarás una lista de todos mis proyectos, con enlaces a su respectiva documentación:
 
-- [Poop Manager](/gauge-implications/poop-manager/)
+- [Poop Manager]({{ site.baseurl }}/gauge-implications/poop-manager/)
