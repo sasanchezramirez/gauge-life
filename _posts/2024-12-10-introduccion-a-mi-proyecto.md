@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Introducción a mi proyecto"
+title: "El Zaratustra"
 date: 2024-12-10 10:00:00 +0000
-categories: [proyectos, inicio]
-tags: [documentación, personal]
+categories: [GaugeExpressions, Pintura]
+tags: [Pintura]
+image:
+  path: /assets/img/posts/el-zaratustra.jpeg
+  alt: Pintura "El Zaratustra".
 ---
 
-# Introducción a mi proyecto
-
-Este es el primer post donde explico la idea general de mi proyecto personal, sus objetivos y las herramientas que utilizaré...
+>Próximamente
+{: .prompt-info }
