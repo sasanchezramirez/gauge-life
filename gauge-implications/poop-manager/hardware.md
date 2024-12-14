@@ -2,6 +2,7 @@
 layout: page
 title: "Detalles de Hardware - Poop Manager"
 permalink: /gauge-implications/poop-manager/hardware/
+mermaid: true
 ---
 
 # Contenido
@@ -13,12 +14,38 @@ permalink: /gauge-implications/poop-manager/hardware/
 6. [Lógica General del Sistema](#6-lógica-general-del-sistema)
 7. [Next Steps](#7-next-steps)
 
+---
+
 
 ## 1. Descripción General
 
 El sistema electrónico de **Poop Manager** tiene como objetivo principal detectar, registrar y monitorear la entrada y salida de la mascota al baño. La lógica del sistema se encuentra implementada en una placa **ESP32**, la cual se comunica con una API web para almacenar la información de cada visita.
 
 El sistema utiliza un **sensor de ultrasonido** para detectar la presencia de la mascota, un **LED de presencia** para indicar si la mascota está en el baño y un **LED de limpieza** que se activa cuando se alcanza un umbral de visitas, indicando la necesidad de realizar una limpieza.
+
+
+```mermaid
+flowchart TD
+    %% IoT System
+    subgraph IOT ["Sistema IoT"]
+        power["Batería 5V"] --> esp32["ESP32"]
+        sensor["Sensor de Ultrasonido"] -->|Mide distancia cada 5 segundos| esp32
+        esp32 -->|Envia datos en formato JSON| api["API"]
+    end
+
+    %% API Endpoint
+    api -->|POST @/new-poop| handler["Poop Handler"]
+
+    %% Backend System
+    subgraph Backend ["Sistema Backend"]
+        handler -->|Valida datos y registra evento| db["Base de Datos"]
+        handler -->|Calcula métricas y genera alertas| metrics["Módulo de Métricas"]
+    end
+
+    %% Relación de Respuesta
+    handler -->|Confirma registro exitoso| api
+    api -->|Respuesta HTTP 200| esp32
+````
 
 ---
 
@@ -148,6 +175,7 @@ if (activationsUntilCleaning >= 7) {
 ---
 
 ## 5. Variables Clave
+
 | Variable               | Tipo           | Función                                                              |
 |------------------------|----------------|----------------------------------------------------------------------|
 | `ledActivations`       | `int`          | Número de visitas de la mascota registradas en el día.               |
