@@ -99,4 +99,4 @@ Poop Manager es un prototipo diseñado para adquirir conocimientos técnicos y o
 - [Front]({{ site.baseurl }}/gauge-implications/poop-manager/front/)
 - [Back]({{ site.baseurl }}/gauge-implications/poop-manager/back/)
 - [Hardware]({{ site.baseurl }}/gauge-implications/poop-manager/hardware/)
-- [Esquemas de datos]({{ site.baseurl }}/gauge-implications/poop-manager/data-schemas/)
+<!-- - [Esquemas de datos]({{ site.baseurl }}/gauge-implications/poop-manager/data-schemas/) -->
