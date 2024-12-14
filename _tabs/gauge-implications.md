@@ -21,7 +21,7 @@ Cada link abre la documentación de los proyectos. Allí instancio mi expresión
 
 
 - [Poop Manager]({{ site.baseurl }}/gauge-implications/poop-manager/)
-- [JineteApp]({{ site.baseurl }}/gauge-implications/jinteapp/)
+- [JineteApp]({{ site.baseurl }}/gauge-implications/jineteapp/)
 - [Cash Flow]({{ site.baseurl }}/gauge-implications/cash-flow/)
 - [2.5 Vision]({{ site.baseurl }}/gauge-implications/25-vision/)
 
