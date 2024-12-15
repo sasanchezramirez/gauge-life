@@ -60,43 +60,7 @@ flowchart TD
     class E2 infra;
     class E3 infra;
 ```
-<!-- 
-```mermaid
-flowchart TB
-    %% Definición del Usuario
-    usuario["🧑‍💻 Usuario\nPeticiones y Respuestas"]
 
-    %% Backend - FastAPI
-    subgraph backend["🟥 Backend - FastAPI"]
-        entrypoint["🟦 Entry Point\nController, Validation, Mapper"]
-
-        subgraph domain["🟨 Dominio"]
-            usuarios["Usuarios\nEntidades"]
-            modelos["Modelos de Negocio\nReglas de Negocio"]
-            gateways["Gateways\nInterfaces"]
-        end
-
-        subgraph infrastructure["🟥 Infraestructura"]
-            repositorios["Repositorios\nSQLAlchemy"]
-            implementacion_gateways["Implementación de Gateways\nAdaptadores"]
-            entidades_dtos["Entidades & DTOs\nData Models"]
-            api_externas["APIs Externas\nServicios Terceros"]
-        end
-
-        bd["🗄 Base de Datos\nPostgreSQL"]
-    end
-
-    %% Relaciones entre componentes
-    usuario --> entrypoint
-    entrypoint --> domain
-    domain --> gateways
-    gateways --> infrastructure
-    infrastructure --> repositorios
-    repositorios --> bd
-    infrastructure --> api_externas
-    infrastructure --> entidades_dtos
-    entrypoint --> usuario
-``` -->
 
 ### Estructura de Directorios
 
