@@ -203,6 +203,8 @@ El backend utiliza **JSON Web Tokens (JWT)** para autenticación segura:
    - Establece las rutas de entrada y los endpoints de la API.
    - Configuración de **CORS** y **autenticación y autorización**. 
 
+![Desktop View](/assets/img/docs/hexagonal-architecture.jpeg){: width="972" height="589" }
+_Esquema de las capas_
 
 ---
 
