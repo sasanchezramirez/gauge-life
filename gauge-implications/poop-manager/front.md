@@ -50,7 +50,7 @@ El componente principal que muestra el dashboard con las siguientes característ
 - `onChartRefresh()`: Actualiza los datos del gráfico
 - `heatmapData`: Matriz de datos para el mapa de calor semanal
 
-## 🔧 Instalación
+## Instalación
 
 1. Clona el repositorio:
 ```bash
