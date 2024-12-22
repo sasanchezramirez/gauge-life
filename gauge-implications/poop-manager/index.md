@@ -51,11 +51,31 @@ Los hitos importantes del proyecto se resumen en los siguientes:
 
 En este momento, se tiene el siguiente estado de avance del proyecto
 
-<div class="progress">
-  <div class="progress-bar bg-success progress-animation" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-    55%
+<div class="progress w-100">
+  <div class="progress-bar bg-success progress-animation d-flex align-items-center justify-content-center" 
+       role="progressbar" 
+       style="width: 55%" 
+       aria-valuenow="55" 
+       aria-valuemin="0" 
+       aria-valuemax="100">
+    <span class="progress-text">55%</span>
   </div>
 </div>
+
+<style>
+.progress {
+  min-height: 25px;
+}
+.progress-text {
+  color: white;
+  font-weight: bold;
+}
+@media (max-width: 576px) {
+  .progress {
+    min-height: 20px;
+  }
+}
+</style>
 
 
 ## Diagrama de Arquitectura
