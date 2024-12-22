@@ -9,5 +9,8 @@ image:
   alt: Pintura "El Zaratustra".
 ---
 
->Próximamente
-{: .prompt-info }
+> The prisoner who now stands before you was caught red-handed showing feelings (...)
+>Showing feelings of an almost human nature
+>
+> —  The Trial, Pink Floyd
+
