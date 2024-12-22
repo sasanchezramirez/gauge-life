@@ -4,6 +4,7 @@ title: "Detalles de Hardware - Poop Manager"
 permalink: /gauge-implications/poop-manager/hardware/
 mermaid: true
 ---
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)
 
 # Contenido
 1. [Descripción General](#1-descripción-general)
@@ -197,3 +198,7 @@ if (activationsUntilCleaning >= 7) {
 •	Gestionar errores de conexión Wi-Fi: Implementar una reconexión automática en caso de pérdida de señal.
 •	Ahorro de Energía: Implementar una lógica de “modo de bajo consumo” para reducir el uso de la batería.
 •	Parámetros Configurables: Permitir configurar la distancia umbral, el intervalo de limpieza y los parámetros de la API desde una interfaz web o aplicación móvil.
+
+---
+
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)

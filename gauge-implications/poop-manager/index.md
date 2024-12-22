@@ -5,8 +5,13 @@ permalink: /gauge-implications/poop-manager/
 mermaid: true
 
 ---
-  
-# Documentación del Proyecto
+
+Aquí encontrarás la **documentación general** del proyecto, para los casos específicos puedes visitar la documentación específica para:
+
+- [Front]({{ site.baseurl }}/gauge-implications/poop-manager/front/)
+- [Back]({{ site.baseurl }}/gauge-implications/poop-manager/back/)
+- [Hardware]({{ site.baseurl }}/gauge-implications/poop-manager/hardware/)
+
 
 ## Contenido
 1. [Objetivos Principales](#objetivos-principales)
@@ -14,9 +19,8 @@ mermaid: true
 3. [Diagrama de Arquitectura](#diagrama-de-arquitectura)
 4. [Requisitos Técnicos](#requisitos-técnicos)
 5. [Métricas](#métricas)
-6. [Funcionalidad Adicional](#funcionalidad-adicional)
-7. [Conclusión](#conclusión)
-8. [Detalles de la documentación](#detalles-de-la-documentación)
+6. [Funcionalidad Adicional](#)
+7. [Detalles de la documentación](#detalles-de-la-documentación)
 
 ## Objetivos Principales
 Poop Manager es un proyecto que combina componentes web y electrónicos para monitorear las veces que mi mascota (Chaplin) entra a su caja de arena, con el objetivo de conocer su comportamiento y monitorear la salud de su alimentación y digestión. 
@@ -35,6 +39,24 @@ Es además un desafío personal de profundizar en conocimientos técnicos mientr
 - Almacenamiento de información de usuarios y mascotas en una base de datos.
 - Recopilación de datos de múltiples mascotas por usuario.
 - Presentación de métricas relacionadas a la actividad de la mascota.
+
+### Estado del proyecto
+
+Los hitos importantes del proyecto se resumen en los siguientes:
+
+- [ ] Infraestructura
+- [ ] Capa de usuario
+- [ ] Capa lógica
+- [ ] Implementación hardware
+
+En este momento, se tiene el siguiente estado de avance del proyecto
+
+<div class="progress">
+  <div class="progress-bar bg-success progress-animation" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+    55%
+  </div>
+</div>
+
 
 ## Diagrama de Arquitectura
 >En caso de ser necesario puede activar el modo *light* en el sidebar sobre la parte inferior.
@@ -91,8 +113,6 @@ Rel(power, iot, "Alimenta al ESP32 y sus componentes.")
 - Recomendación de cuándo realizar limpiezas basada en el número de visitas.
 - Historial de limpiezas y visualización de la última limpieza realizada.
 
-## Conclusión
-Poop Manager es un prototipo diseñado para adquirir conocimientos técnicos y ofrecer una solución práctica para monitorear la salud de las mascotas.
 
 ## Detalles de la documentación:
 

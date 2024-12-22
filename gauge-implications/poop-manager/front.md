@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "Front-End - Proyecto A"
+title: "Front-End - Poop Manager"
 permalink: /gauge-implications/poop-manager/front/
 ---
   
-# ChaplinPoopManager - Frontend
+
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)
 
 ## Contenido
 1. [Descripción](#descripción)
@@ -104,3 +105,7 @@ _Mock del gestor de mascotas_
 ##  Notas Adicionales
 - La aplicación está diseñada para ser responsive
 - Se recomienda mantener actualizadas las dependencias
+
+---
+
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)

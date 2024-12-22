@@ -4,7 +4,8 @@ title: "Detalles de Backend - Poop Manager"
 permalink: /gauge-implications/poop-manager/back/
 mermaid: true
 ---
-  
+
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)
 
 ## Contenido
 1. [Descripción del Proyecto](#descripción-del-proyecto)
@@ -220,4 +221,6 @@ _Esquema de las capas_
 - [ ] Optimización de la autenticación.
 - [ ] Monitoreo y optimización de consultas a la base de datos.
 
+---
 
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)
