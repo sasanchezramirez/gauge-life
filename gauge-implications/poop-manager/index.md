@@ -90,7 +90,7 @@ Rel(power, iot, "Alimenta al ESP32 y sus componentes.")
 - Backend construido con FastAPI en Python.
 
 >Para mayor detalle técnico sobre el software, diríjase a las secciones de [Backend]({{ site.baseurl }}/gauge-implications/poop-manager/back/) y [Frontend]({{ site.baseurl }}/gauge-implications/poop-manager/front/).
-{: .prompt-info }
+{: .prompt-tip }
 
 ### Hardware
 - Sensor de efecto Doppler de ultrasonido.
@@ -98,7 +98,7 @@ Rel(power, iot, "Alimenta al ESP32 y sus componentes.")
 - Batería de 5V para alimentar el sistema.
 
 >Para mayor detalle sobre el hardware, consulta la sección [Hardware]({{ site.baseurl }}/gauge-implications/poop-manager/hardware/).
-{: .prompt-info }
+{: .prompt-tip }
 
 ## Métricas
 - Cantidad de veces que la mascota entra al baño, la hora y el día.
