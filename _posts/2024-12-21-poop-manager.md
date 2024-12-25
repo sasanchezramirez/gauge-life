@@ -23,8 +23,8 @@ Hace un tiempo, en una revisión veterinaria, me preguntaron cada cuánto Chapli
 
 El asunto quedó ahí, nada más, hasta que semanas después, aburrido, quise establecer una estrategia para conocer este dato y poder tener una respuesta clara y precisa ante una próxima pregunta similar. **Un padre responsable que llaman.**
 
-A continuacón verás una descripción poco técnica del proyecto. Si deseas ver los detalles técnicos pues visitar [Poop Manager]({{ site.baseurl }}/gauge-implications/poop-manager/)
-
+>A continuacón verás una descripción poco técnica del proyecto. Si deseas ver los detalles técnicos pues visitar [Poop Manager]({{ site.baseurl }}/gauge-implications/poop-manager/)
+{: .prompt-tip }
 
 ## La estrategia
 
