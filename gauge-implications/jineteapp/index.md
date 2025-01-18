@@ -91,7 +91,7 @@ La documentación detallada del **backend** cubre:
 - **Ejecución**, **instalación**, **pruebas**, etc.
 
 Para más información, revisa:  
-[Jineteapp Backend Documentation](https://github.com/sasanchezramirez/jineteapp_back)  
+[Jineteapp Backend Documentation]({{ site.baseurl }}/gauge-implications/jineteapp/back/) 
 (O donde esté alojada la guía completa en Markdown).
 
 ---
@@ -106,7 +106,7 @@ La documentación específica del **frontend** describe:
 - **Scripts de ejecución**, **testing**, y **despliegue**.
 
 Puedes encontrarla aquí:  
-[Jineteapp Frontend Documentation](https://github.com/sasanchezramirez/jineteapp-front)
+[Jineteapp Frontend Documentation]({{ site.baseurl }}/gauge-implications/jineteapp/front/)
 
 ---
 
