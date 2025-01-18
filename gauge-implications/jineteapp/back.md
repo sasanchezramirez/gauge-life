@@ -17,15 +17,15 @@ Este documento describe la **arquitectura**, el **funcionamiento**, las **entida
 
 1. [Introducción](#introducción)  
 2. [Arquitectura General](#arquitectura-general)  
-    - [Diagrama de Arquitectura](#diagrama-de-arquitectura-mermaid)  
+    - [Diagrama de Arquitectura](#diagrama-de-arquitectura)  
 3. [Dominio](#dominio)  
     - [Entidades Principales](#entidades-principales)  
-    - [Diagrama de Clases](#diagrama-de-clases-mermaid)  
+    - [Diagrama de Clases](#diagrama-de-clases)  
 4. [Casos de Uso](#casos-de-uso)  
-    - [Secuencia de un Caso de Uso (Mermaid)](#secuencia-de-un-caso-de-uso-mermaid)  
+    - [Secuencia de un Caso de Uso](#secuencia-de-un-caso-de-uso)  
 5. [Infraestructura](#infraestructura)  
     - [Controladores REST](#controladores-rest)  
-    - [Persistencia](#persistencia-repositorios)  
+    - [Persistencia](#persistencia)  
     - [Configuraciones](#configuraciones)  
 6. [Configuraciones y Ejecución](#configuraciones-y-ejecución)  
     - [Requerimientos](#requerimientos)  
@@ -35,7 +35,6 @@ Este documento describe la **arquitectura**, el **funcionamiento**, las **entida
 7. [Estructura de Carpetas](#estructura-de-carpetas)  
 8. [Pruebas](#pruebas)  
 9. [FAQ y Buenas Prácticas](#faq-y-buenas-prácticas)  
-10. [Contacto y Contribuciones](#contacto-y-contribuciones)  
 
 ---
 

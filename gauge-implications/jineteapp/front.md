@@ -336,7 +336,6 @@ server {
 - **Repositorio oficial Frontend**: [jineteapp-front](https://github.com/sasanchezramirez/jineteapp-front)  
 - **Repositorio oficial Backend**: [jineteapp_back](https://github.com/sasanchezramirez/jineteapp_back)  
 - Para sugerencias, errores o contribuciones, crea un **Issue** o un **Pull Request** en el repositorio de GitHub.  
-- ¡Gracias por tu interés en el proyecto Jineteapp!
 
 ---
 

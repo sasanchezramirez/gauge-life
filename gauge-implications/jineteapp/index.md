@@ -182,6 +182,5 @@ Para **desplegar** la aplicación:
 - **Repositorio Backend**: [jineteapp_back](https://github.com/sasanchezramirez/jineteapp_back)  
 - **Repositorio Frontend**: [jineteapp_front](https://github.com/sasanchezramirez/jineteapp-front)  
 - Crea un **Issue** o un **Pull Request** en GitHub para reportar problemas o sugerencias.  
-- ¡Gracias por tu interés en Jineteapp y por ayudar a mejorar esta herramienta de gestión financiera!
 
 ---
