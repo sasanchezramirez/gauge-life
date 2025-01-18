@@ -6,13 +6,13 @@ math: true
 
 ---
   
-# Análisis de la Interacción de la Luz con la Atmósfera y Metodologías Fotométricas
+# La Luz en la Atmósfera
 
-La interacción de la radiación electromagnética con la materia es fundamental para comprender y cuantificar la calidad del aire y la visibilidad. En el contexto de la atmósfera, la radiación —especialmente la solar— atraviesa un medio heterogéneo constituido por gases y partículas sólidas o líquidas (aerosoles). Dichos componentes pueden absorber, dispersar y transmitir la luz incidente, modificando sus características físico-químicas (intensidad, fase, dirección y composición espectral). La descripción de estos procesos permite establecer relaciones entre la concentración de material particulado y la atenuación de la luz, información esencial para evaluar las condiciones atmosféricas.
+La interacción de la radiación electromagnética con la materia es fundamental para comprender y cuantificar la calidad del aire y la visibilidad. En el contexto de la atmósfera, la radiación —especialmente la solar— atraviesa un medio heterogéneo constituido por gases y partículas sólidas o líquidas (aerosoles)[^1]. Dichos componentes pueden absorber, dispersar y transmitir la luz incidente, modificando sus características físico-químicas (intensidad, fase, dirección y composición espectral). La descripción de estos procesos permite establecer relaciones entre la concentración de material particulado y la atenuación de la luz, información esencial para evaluar las condiciones atmosféricas.
 
 ---
 
-## Fotometría Atmosférica y Medición de la Luz
+## Fotometría Atmosférica
 
 La fotometría, en el ámbito atmosférico, se basa en el principio de que la luz (monocromática o policromática) puede sufrir cambios en su intensidad al interactuar con el medio. Estos cambios se describen mediante fenómenos de **absorción** (pérdida de energía fotónica) y **dispersión** (redirección de la luz en diferentes ángulos). Para llevar a cabo mediciones cuantitativas, se aprovechan sistemas de detección como fotodiodos y sensores digitales (CCD o CMOS), los cuales convierten la energía luminosa en señales eléctricas que pueden analizarse y relacionarse con la concentración de diferentes componentes atmosféricos.
 
@@ -20,9 +20,9 @@ Dentro del espectro de la radiación electromagnética, la **luz visible** (apro
 
 ---
 
-## Fundamentos de la Ley de Beer-Lambert-Bouguer
+## La clave: Ley de Beer-Lambert-Bouguer
 
-La atenuación de la radiación luminosa al atravesar la atmósfera se describe clásicamente mediante la **Ley de Beer-Lambert-Bouguer**. Esta ley considera que la intensidad de la luz decae de forma exponencial en función de la distancia recorrida y de la densidad de especies atenuadoras presentes en el camino óptico. Su forma generalizada para un haz de luz de longitud de onda \( \lambda \) es:
+La atenuación de la radiación luminosa al atravesar la atmósfera se describe clásicamente mediante la **Ley de Beer-Lambert-Bouguer**. Esta ley considera que la intensidad de la luz decae de forma exponencial en función de la distancia recorrida y de la densidad de especies atenuadoras presentes en el camino óptico (en otras palabras, debido a aerosoles). Su forma generalizada para un haz de luz de longitud de onda \( \lambda \) es:
 
 $$
 I_\lambda = \frac{I_{0,\lambda}}{z_0^2} \, e^{-\tau(\lambda) \, m_{\theta_0}},
@@ -138,3 +138,8 @@ La combinación de mediciones fotométricas con modelos radiativos y datos compl
 ## Conclusión
 
 El marco teórico de la fotometría aplicada al estudio de la atmósfera se basa en la descripción de la interacción de la luz con los componentes gaseosos y particulados. La Ley de Beer-Lambert-Bouguer constituye el pilar matemático para modelar la atenuación de la radiación y, junto con los sensores digitales y los conceptos de colorimetría (RGB), permite un análisis detallado de la calidad del aire y la visibilidad. Agregar justificaciones físicas relacionadas con la dispersión (Rayleigh y Mie) y la absorción (por distintos gases y aerosoles) refuerza la interpretación de los datos, ofreciendo métodos indirectos pero sólidos para la cuantificación y monitoreo continuo de la atmósfera.
+
+---
+
+## Notas
+[^1]: De ahora en adelante se usará el término Aerosol para referirse a estas partículas de manera general 

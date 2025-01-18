@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "El Zaratustra"
-date: 2024-12-10 10:00:00 +0000
+date: 2024-10-10 10:00:00 +0000
 categories: [GaugeExpressions, Pintura]
 tags: [Pintura]
 image:
