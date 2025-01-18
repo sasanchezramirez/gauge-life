@@ -17,15 +17,15 @@ Este documento describe la **arquitectura**, el **funcionamiento**, las **entida
 
 1. [Introducción](#introducción)  
 2. [Arquitectura General](#arquitectura-general)  
-    - [Diagrama de Arquitectura (Mermaid)](#diagrama-de-arquitectura-mermaid)  
+    - [Diagrama de Arquitectura](#diagrama-de-arquitectura-mermaid)  
 3. [Dominio](#dominio)  
     - [Entidades Principales](#entidades-principales)  
-    - [Diagrama de Clases (Mermaid)](#diagrama-de-clases-mermaid)  
+    - [Diagrama de Clases](#diagrama-de-clases-mermaid)  
 4. [Casos de Uso](#casos-de-uso)  
     - [Secuencia de un Caso de Uso (Mermaid)](#secuencia-de-un-caso-de-uso-mermaid)  
 5. [Infraestructura](#infraestructura)  
     - [Controladores REST](#controladores-rest)  
-    - [Persistencia (Repositorios)](#persistencia-repositorios)  
+    - [Persistencia](#persistencia-repositorios)  
     - [Configuraciones](#configuraciones)  
 6. [Configuraciones y Ejecución](#configuraciones-y-ejecución)  
     - [Requerimientos](#requerimientos)  
@@ -99,7 +99,7 @@ Ejemplos de entidades podrían ser:
 | **Transacción** | Registra ingresos y egresos, asocia montos, fechas, categoría, etc.                  |
 | **Categoría** | Agrupa transacciones en rubros (alimentación, vivienda, transporte, etc.).              |
 
-### Diagrama de Clases (Mermaid)
+### Diagrama de Clases
 
 ```mermaid
 classDiagram
@@ -196,7 +196,7 @@ public class TransaccionController {
 - `RegistrarTransaccionService` es un **servicio de aplicación** (caso de uso) que se encarga de la lógica de registrar transacciones.  
 - Recibimos un `TransaccionRequest` desde el **frontend**, y devolvemos un `TransaccionResponse` con los datos de la transacción creada.
 
-### Persistencia (Repositorios)
+### Persistencia
 
 En la carpeta `com.jineteapp.infrastructure.repository` o similar, se ubican las **interfaces** que extienden de `JpaRepository`:
 

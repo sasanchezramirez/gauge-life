@@ -14,7 +14,7 @@ Este documento detalla la **arquitectura**, la **estructura** de ficheros, la **
 3. [Estructura del Proyecto](#estructura-del-proyecto)
 4. [Módulos y Componentes](#módulos-y-componentes)
 5. [Servicios](#servicios)
-6. [Rutas (Routing)](#rutas-routing)
+6. [Rutas](#rutas-routing)
 7. [Configuración de Entorno](#configuración-de-entorno)
 8. [Ejecución y Scripts](#ejecución-y-scripts)
 9. [Testing](#testing)
@@ -155,7 +155,7 @@ export class TransaccionService {
 
 ---
 
-## Rutas (Routing)
+## Rutas 
 
 Para gestionar la **navegación** dentro de la aplicación, Angular utiliza el módulo `@angular/router`. Normalmente se configura un `app-routing.module.ts` en la raíz del proyecto:
 
