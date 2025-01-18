@@ -17,7 +17,6 @@ Este documento describe la **arquitectura**, el **funcionamiento**, las **entida
 
 1. [Introducción](#introducción)  
 2. [Arquitectura General](#arquitectura-general)  
-    - [Diagrama de Arquitectura](#diagrama-de-arquitectura)  
 3. [Dominio](#dominio)  
     - [Entidades Principales](#entidades-principales)  
     - [Diagrama de Clases](#diagrama-de-clases)  
