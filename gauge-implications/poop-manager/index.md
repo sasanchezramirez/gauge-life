@@ -49,9 +49,9 @@ Los hitos importantes del proyecto se resumen en los siguientes:
 - [ ] Capa lógica
 - [ ] Implementación hardware
 
-En este momento, se tiene el siguiente estado de avance del proyecto:
+<!-- En este momento, se tiene el siguiente estado de avance del proyecto:
 
-`██████████████████████████████░░░░░░░░░░░░░░` 55%
+`██████████████████████████████░░░░░░░░░░░░░░` 55% -->
 
 
 

@@ -217,9 +217,9 @@ _Esquema de las capas_
 - [ ] Integración con notificaciones (email o push).
 - [ ] Reportes personalizados para los usuarios.
 
-### En Desarrollo
+<!-- ### En Desarrollo
 - [ ] Optimización de la autenticación.
-- [ ] Monitoreo y optimización de consultas a la base de datos.
+- [ ] Monitoreo y optimización de consultas a la base de datos. -->
 
 ---
 
