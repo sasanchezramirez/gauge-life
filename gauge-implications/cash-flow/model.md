@@ -9,16 +9,18 @@ mermaid: true
 Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/cash-flow/index/)
 
 
-Esta documentación describe cómo se integra el **módulo de OCR** (creado en Python) con el backend de **Cashflow** para **detectar automáticamente** la categoría, el precio, la fecha y la prioridad de compra de una factura o recibo. Además, se presentan sugerencias sobre qué información extra podría requerirse para completar la implementación.
+# Documentación de la Integración OCR en el Backend (Python + FastAPI)
+
+Este documento describe cómo se integra un **módulo OCR** (Python) dentro de un **backend desarrollado en Python usando FastAPI** y siguiendo principios de **arquitectura hexagonal**. El objetivo es **detectar de manera automática** la categoría, el precio, la fecha y la prioridad de compras en facturas o recibos.
 
 ## Tabla de Contenidos
 1. [Introducción](#introducción)
 2. [Objetivos del Módulo OCR](#objetivos-del-módulo-ocr)
 3. [Requisitos y Tecnologías](#requisitos-y-tecnologías)
 4. [Arquitectura e Integración](#arquitectura-e-integración)
+   - [Arquitectura Hexagonal en FastAPI](#arquitectura-hexagonal-en-fastapi)
    - [Flujo de Subida de Imágenes](#flujo-de-subida-de-imágenes)
-   - [Estructura de Carpetas (Python OCR)](#estructura-de-carpetas-python-ocr)
-   - [Endpoints y Servicios en Node/Backend](#endpoints-y-servicios-en-nodebackend)
+   - [Endpoints y Puertos de Entrada/Salida](#endpoints-y-puertos-de-entradasalida)
 5. [Variables de Entorno](#variables-de-entorno)
 6. [Detección de Datos (Categoría, Precio, Fecha, Prioridad)](#detección-de-datos-categoría-precio-fecha-prioridad)
 7. [Limitaciones y Posibles Mejoras](#limitaciones-y-posibles-mejoras)
@@ -28,216 +30,244 @@ Esta documentación describe cómo se integra el **módulo de OCR** (creado en P
 
 ## Introducción
 
-El módulo **OCR** (Optical Character Recognition) tiene como propósito **procesar imágenes** de facturas o recibos y extraer de forma automática:
-- **Precio** (importe total)
-- **Fecha** de emisión o compra
-- **Categoría** (clasificación inferida, p. ej. “Comida”, “Transporte”, etc.)
-- **Prioridad** o urgencia de la compra
+En **Cashflow**, el **backend en Python** se encarga de procesar, registrar y gestionar los movimientos financieros. Para **agilizar la creación de movimientos** provenientes de facturas o recibos físicos, se ha desarrollado/integrado un **módulo de OCR** que extrae automáticamente la información relevante (precio, categoría, fecha, prioridad).
 
-Este módulo se integra con el backend principal de **Cashflow** para agilizar el alta de movimientos financieros sin requerir que el usuario ingrese manualmente toda la información.
+El backend usa **FastAPI** para exponer endpoints REST y sigue una **arquitectura hexagonal** (puertos y adaptadores), lo que facilita su mantenibilidad y escalabilidad. El OCR se integra como un adaptador de salida que consume la lógica principal del dominio para almacenar sus resultados.
 
 ---
 
 ## Objetivos del Módulo OCR
 
-1. **Reducir el tiempo** de registro de movimientos, automatizando la lectura de datos relevantes.
-2. **Disminuir errores** de digitación, asegurando que el importe y fecha coincidan con la factura.
-3. **Sugerir categorías** de forma inteligente basándose en el contenido textual.
-4. **Asignar prioridad** al gasto, permitiendo un análisis más profundo del flujo de caja (por ejemplo, si es un gasto esencial vs. uno discrecional).
+1. **Automatizar** la lectura de datos clave en facturas (precio, fecha, categoría, prioridad).
+2. **Reducir errores** de transcripción y ahorrar tiempo al usuario.
+3. **Mantener una arquitectura limpia**: El OCR se implementa como un servicio externo o un submódulo que cumple un puerto (interfaz) definido en el dominio.
+4. **Mejorar la analítica** posterior de movimientos financieros gracias a la detección de prioridad y categoría.
 
 ---
 
 ## Requisitos y Tecnologías
 
-1. **Python (versión 3.8+)**: Lenguaje principal del módulo OCR.
-2. **Bibliotecas de OCR**: 
-   - [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) o 
-   - Librerías como `pytesseract`, `OpenCV`, o 
-   - Un modelo propio en PyTorch/TF que identifique textos específicos (dependiendo de la implementación).
-3. **Conexión al Backend** (Node.js o similar):
-   - API para recibir imágenes (multipart/form-data).
-   - Endpoint para guardar los resultados devueltos por el OCR.
-4. **Base de Datos**: Se asume que la información final de la factura (categoría, precio, fecha, etc.) se almacena en PostgreSQL o la base configurada.
-
-*Nota*: La configuración exacta del OCR (tipo de modelo, entrenamientos adicionales, etc.) podría variar en función de las necesidades y la calidad de las imágenes.
+1. **Python 3.8+**: Lenguaje principal.
+2. **FastAPI**: Framework para crear y gestionar las rutas y lógica de negocio.
+3. **Arquitectura Hexagonal**: Separación de la lógica de negocio (dominio) de los adaptadores de entrada (endpoints) y de salida (OCR, base de datos, etc.).
+4. **OCR**:
+   - Puede ser **Tesseract**, **Pytesseract**, **OpenCV** o un **modelo personalizado** (PyTorch, TensorFlow, etc.).
+5. **Base de Datos**: PostgreSQL (u otra) para almacenar la información extraída.
 
 ---
 
 ## Arquitectura e Integración
 
-La integración se basa en un enfoque **multi-servicio** o **microservicio** donde el backend en Node.js coordina la recepción de la imagen y llama al módulo OCR en Python.
+### Arquitectura Hexagonal en FastAPI
+
+~~~
+Domino (Reglas de negocio, casos de uso)
+┌───────────┐
+│ Puertos   │   <--- Contratos de entrada/salida
+└───────────┘
+   ↑     ↓  
+Adaptadores: 
+- Entrada (FastAPI Controllers, CLI, etc.)
+- Salida (BD, OCR, servicios externos)
+~~~
+
+- **Dominio**: Contiene las entidades y lógica asociada a la creación de movimientos.
+- **Puerto de Entrada**: Interfaz definida para registrar un nuevo movimiento (p.ej., `CreateInvoiceUseCase`).
+- **Puerto de Salida**: Interfaz que el dominio invoca para ejecutar la detección OCR (`OCRPort`).
+- **Adaptadores**: Concretan la conexión con FastAPI y la herramienta OCR real.
 
 ### Flujo de Subida de Imágenes
 
 ~~~mermaid
 sequenceDiagram
+    actor U as Usuario
     participant F as Frontend
-    participant NB as Backend Node
-    participant OCR as OCR Python Service
-    participant DB as DB/PostgreSQL
+    participant API as FastAPI (Adaptador de Entrada)
+    participant OCR as Módulo OCR (Adaptador de Salida)
+    participant D as Dominio
+    participant DB as Base de Datos
     
-    F->>NB: POST /ocr/upload (multipart/form-data)
-    NB->>OCR: Envía la imagen a procesar
-    OCR->>OCR: Extrae fecha, precio, categoría, prioridad
-    OCR-->>NB: Retorna datos OCR en JSON
-    NB->>DB: Guarda los datos reconocidos en la tabla correspondiente
-    NB-->>F: 201 Created (datos de la factura registrados)
+    U->>F: Sube imagen de la factura
+    F->>API: POST /invoices/upload (multipart/form-data)
+    API->>D: Ejecuta caso de uso CreateInvoice (pasa ruta de imagen)
+    D->>OCR: Invoca método de puerto de salida (detectData(image))
+    OCR->>OCR: Procesa imagen (fecha, precio, categoría, prioridad)
+    OCR-->>D: Retorna resultados de OCR
+    D->>DB: Guarda datos en la entidad Invoice/Movement
+    DB-->>D: Confirma registro
+    D-->>API: Devuelve datos de la factura registrada
+    API-->>F: Respuesta 201 Created (con datos extraídos)
 ~~~
 
-1. El **Frontend** envía la imagen al **Node Backend**.
-2. El backend invoca el **servicio OCR** (Python), pasando la imagen (o ruta a la misma).
-3. El servicio OCR **procesa** la imagen y extrae la información deseada.
-4. Retorna un objeto JSON con `category`, `price`, `date`, `priority`.
-5. El backend **almacena** la información en la base de datos.
-6. Retorna una respuesta exitosa al **Frontend**.
+1. **El usuario** sube una imagen desde el frontend.
+2. **FastAPI** recibe el archivo y llama a la lógica del dominio.
+3. **Dominio** invoca un **puerto de salida** para solicitar la detección OCR.
+4. **OCR** procesa la imagen y retorna la información extraída.
+5. **El dominio** guarda la información en la base de datos a través de su repositorio.
+6. El backend responde con un código `201` y los datos registrados.
 
-### Estructura de Carpetas (Python OCR)
 
-Un ejemplo de estructura de proyecto para el OCR:
 
-```
-python-ocr/
-├── requirements.txt
-├── ocr_app/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── services/
-│   │   ├── category_detection.py
-│   │   ├── price_detection.py
-│   │   ├── date_detection.py
-│   │   └── priority_detection.py
-│   └── utils/
-│       ├── image_preprocessing.py
-│       └── text_parsing.py
-└── Dockerfile
-```
+### Endpoints y Puertos de Entrada/Salida
 
-- **services/**: Módulos separados para cada parte de la información que se desea extraer.
-- **utils/**: Funciones de utilidad, como preprocesamiento de imágenes o normalización de texto.
-- **main.py**: Punto de entrada que define los endpoints (si se corre como microservicio) o las funciones exportables (si se integra de otra forma).
+#### Ejemplo de endpoint en FastAPI (adaptador de entrada)
 
-### Endpoints y Servicios en Node/Backend
+```python
+# app/adapters/entrypoints/fastapi_routes.py
+from fastapi import APIRouter, File, UploadFile, Depends
+from app.domain.usecases.create_invoice import CreateInvoiceUseCase
 
-En el backend Node.js se define un controlador para la ruta de OCR, por ejemplo:
-```js
-// routes/ocr.js
-router.post('/upload', upload.single('invoice'), async (req, res) => {
-  try {
-    const imagePath = req.file.path; // Ruta temporal o definitiva de la imagen
-    const ocrData = await callPythonOCRService(imagePath);
+router = APIRouter()
 
-    // Estructura de ocrData esperada:
-    // {
-    //   category: 'Comida',
-    //   price: 123.45,
-    //   date: '2025-01-19',
-    //   priority: 'Alta'
-    // }
-
-    // Guardar datos en DB
-    const savedInvoice = await InvoiceModel.create({
-      file_path: imagePath,
-      recognized_amount: ocrData.price,
-      recognized_date: ocrData.date,
-      recognized_category: ocrData.category,
-      recognized_priority: ocrData.priority,
-      userId: req.user.id
-    });
-
-    return res.status(201).json(savedInvoice);
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-});
+@router.post("/invoices/upload")
+async def upload_invoice(
+    file: UploadFile = File(...),
+    use_case: CreateInvoiceUseCase = Depends()
+):
+    # Se guarda el archivo en una carpeta temporal, luego se llama al caso de uso
+    temp_path = f"/tmp/{file.filename}"
+    with open(temp_path, "wb") as f:
+        f.write(await file.read())
+    
+    invoice_data = use_case.execute(temp_path)
+    return invoice_data
 ```
 
-La función `callPythonOCRService(imagePath)` puede, por ejemplo, comunicarse vía HTTP con el servicio Python u operar en la misma máquina/contendor si se instala Python localmente.
+#### Puerto de Salida (OCRPort)
+
+```python
+# app/domain/ports/ocr_port.py
+from abc import ABC, abstractmethod
+
+class OCRPort(ABC):
+    @abstractmethod
+    def detect_data(self, image_path: str) -> dict:
+        """
+        Retorna un dict con campos:
+        {
+          'category': str,
+          'price': float,
+          'date': datetime/date,
+          'priority': str
+        }
+        """
+        pass
+```
+
+#### Adaptador OCR
+
+```python
+# app/adapters/out/ocr_adapter.py
+import pytesseract
+from app.domain.ports.ocr_port import OCRPort
+from PIL import Image
+import re
+
+class PyTesseractOCRAdapter(OCRPort):
+    def detect_data(self, image_path: str) -> dict:
+        # Conversión a texto
+        text = pytesseract.image_to_string(Image.open(image_path))
+        
+        # Ejemplo simplificado de extracción
+        price = self._extract_price(text)
+        date = self._extract_date(text)
+        category = self._extract_category(text)
+        priority = self._infer_priority(category, price)
+        
+        return {
+            'category': category,
+            'price': price,
+            'date': date,
+            'priority': priority
+        }
+    
+    def _extract_price(self, text: str) -> float:
+        # Regex básico de ejemplo
+        match = re.search(r"(\d+(\.\d{1,2}))", text)
+        return float(match.group(1)) if match else 0.0
+    
+    def _extract_date(self, text: str):
+        # Extrae fecha con regex sencillo
+        # ...
+        return "2025-01-19"
+    
+    def _extract_category(self, text: str) -> str:
+        # Busca palabras clave para deducir categoría
+        # ...
+        return "Comida"
+    
+    def _infer_priority(self, category: str, price: float) -> str:
+        # Ejemplo básico
+        if price > 100:
+            return "Alta"
+        return "Media"
+```
 
 ---
 
 ## Variables de Entorno
 
-Ejemplo de variables relevantes para el servicio OCR y su integración:
+En el proyecto se pueden definir variables de entorno para personalizar la integración OCR:
 
 ```bash
-# .env (Backend Node.js)
-PYTHON_OCR_URL=http://localhost:5000/ocr/process
-OCR_CONFIDENCE_THRESHOLD=0.6
-
-# .env (Python OCR)
-OCR_MODEL_PATH=/app/models/ocr_model.pt
-OCR_LANG=en
-CATEGORIZATION_RULESET=/app/rules/category_rules.json
+# .env
+OCR_ENGINE=pytesseract
+OCR_LANG=spa
+OCR_CONFIDENCE_THRESHOLD=0.7
+DB_URL=postgresql://user:password@host:5432/cashflow_db
 ```
 
-- **PYTHON_OCR_URL**: EndPoint del servicio Python OCR.
-- **OCR_CONFIDENCE_THRESHOLD**: Umbral mínimo de confianza (ej. 0.6).
-- **OCR_MODEL_PATH**: Ruta donde se encuentra el modelo de deep learning (si aplica).
-- **CATEGORIZATION_RULESET**: Archivo con reglas para mapear palabras clave a categorías.
+- **OCR_ENGINE**: Selecciona el motor OCR (pytesseract, un contenedor con Tesseract, etc.).
+- **OCR_LANG**: Configura el idioma principal (ej. `spa` para español).
+- **OCR_CONFIDENCE_THRESHOLD**: Umbral mínimo de confianza para la detección.
+- **DB_URL**: URL de conexión a la base de datos.
 
 ---
 
 ## Detección de Datos (Categoría, Precio, Fecha, Prioridad)
 
-1. **Categoría**:  
-   - Uso de un _rule-based approach_ o un pequeño clasificador entrenado (ej: _bag of words_ + SVM o un modelo NN simple).  
-   - Se buscan palabras clave en el texto extraído (ej: “groceries”, “market”, “restaurant” → categoría “Comida”).
-
-2. **Precio**:  
-   - Detección de secuencias numéricas y reconocimiento de patrones monetarios (`\$XX.XX` o `XX,XX`).
-   - Normalización de la moneda (ej. pesos, dólares).
-
-3. **Fecha**:  
-   - Reconocimiento de patrones de fecha (`DD/MM/YYYY` o `YYYY-MM-DD`).
-   - Manejo de distintos formatos y validación final (día, mes y año reales).
-
-4. **Prioridad**:  
-   - Se puede basar en la categoría o el monto total (ej: si supera cierto umbral monetario → “Alta”).
-   - O la detección de ciertos términos (p.e., “urgente”, “arriendo”, “electricidad” → “Alta”).
-
-### Posible Estructura de Respuesta OCR
-
-```json
-{
-  "category": "Comida",
-  "price": 123.45,
-  "date": "2025-01-19",
-  "priority": "Media",
-  "confidenceScores": {
-    "category": 0.85,
-    "price": 0.95,
-    "date": 0.99
-  }
-}
-```
-- Se pueden incluir campos adicionales como `confidenceScores` para depurar cómo de seguro está el modelo en cada dato.
+1. **Categoría**: 
+   - Heurísticas basadas en palabras clave en la factura (p.e. “grocery”, “food”, “restaurant” → `Comida`).
+   - O un modelo ML entrenado para clasificar categorías (ej. BERT, TF-IDF, etc.).
+2. **Precio**:
+   - Regex o heurística para capturar valores monetarios con formato `XX.XX`.
+   - Manejo de símbolos monetarios o separadores de miles.
+3. **Fecha**:
+   - Patrones de fecha (`DD/MM/YYYY`, `YYYY-MM-DD`).
+   - Ajustes regionales (día/mes invertidos).
+4. **Prioridad**:
+   - Reglas de negocio: monto elevado => “Alta”; ciertos tipos de gastos => “Esencial”.
+   - Opcionalmente, la categoría determina la prioridad (p.e., “Salud” => “Alta”, “Entretenimiento” => “Baja”).
 
 ---
 
 ## Limitaciones y Posibles Mejoras
 
-1. **Calidad de Imagen**: OCR depende fuertemente de que la factura sea legible. Imágenes borrosas o mal iluminadas pueden disminuir la precisión.
-2. **Idiomas y Formatos**: Si la factura está en otro idioma/país con distintos formatos de fecha y moneda, se debe ajustar la configuración.
-3. **Precisión de Categoría**: Un rule-based approach simple puede fallar en compras mixtas. Se podría mejorar con un **modelo de clasificación** o una **IA** que identifique contextos.
-4. **Escalabilidad**: Para grandes volúmenes de imágenes, se recomienda un sistema que procese en segundo plano (por ejemplo, colas asíncronas con RabbitMQ o AWS SQS).
-5. **Mantenimiento del Modelo**: Si se usa un modelo de machine learning, necesitará retraining con datos reales para mejorar la precisión de categorización y prioridad.
+1. **Calidad de las Imágenes**: OCR depende de la nitidez y el formato de la factura. Imágenes borrosas reducen la exactitud.
+2. **Formato y Legibilidad**: Facturas con diseños complicados pueden requerir segmentación previa o un modelo de IA más robusto.
+3. **Clasificación de Categoría**: Un sistema de palabras clave sencillo puede errar con nuevas categorías. Incluir un **método de aprendizaje continuo** mejoraría la precisión.
+4. **Internacionalización**: Para distintos idiomas o monedas, se requiere mayor configuración (ej. regex flexibles o un modelo entrenado multilenguaje).
+5. **Procesamiento en Paralelo**: Para grandes volúmenes, considerar **workers asíncronos** (celery, RQ, etc.) que procesen en segundo plano.
 
 ---
 
 ## Conclusiones
 
-La **integración OCR en Python** para **Cashflow** permite:
+La integración de **OCR** en el **backend Python + FastAPI** (con arquitectura hexagonal) permite:
 
-- Automatizar la captura de datos de facturas.
-- Asignar automáticamente categorías, importe, fecha y prioridad.
-- Mantener la arquitectura flexible (Node.js en el backend principal y Python para OCR).
+- **Automatizar** la creación de movimientos financieros a partir de imágenes.
+- **Mantener** un diseño escalable y limpio, donde el OCR es un adaptador de salida.
+- **Centralizar** la lógica de negocio en el dominio, agnóstico de la implementación específica del OCR.
 
-**Información requerida adicional**:
-- **Ejemplos de facturas** reales o dataset de entrenamiento (si se usa ML).
-- **Especificaciones exactas** de las categorías disponibles y su correspondencia textual.
-- **Definición de reglas** para determinar la prioridad (¿se basa únicamente en el monto? ¿Existen palabras clave “urgente”?).
+Para un **sistema más completo**, conviene:
 
-Con esa información, el sistema podría configurarse y entrenarse para lograr mayor precisión, mejor experiencia de usuario y una automatización más robusta.  
+- **Añadir** un pipeline de preprocesamiento de la imagen (desenfoque, rotación, etc.).
+- **Entrenar o mejorar** los algoritmos de clasificación de categoría y detección de fecha.
+- **Implementar** un sistema de colas para procesar las imágenes de manera asíncrona.
+
+**Con esta arquitectura y definición** se sientan las bases para un módulo OCR robusto, facilitando el registro y clasificación de sus facturas de manera rápida y efectiva.
+
+
 
 ---
 Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/cash-flow/index/)

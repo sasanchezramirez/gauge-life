@@ -17,7 +17,7 @@ Este documento describe en profundidad la arquitectura, los endpoints, la config
 3. [Configuración de Entorno](#configuración-de-entorno)
 4. [Ejecución en Entorno Local](#ejecución-en-entorno-local)
 5. [Modelos de Datos](#modelos-de-datos)
-   - [Diagrama ER (Mermaid)](#diagrama-er-mermaid)
+   - [Diagrama ER](#diagrama-er-)
    - [Descripción de Entidades](#descripción-de-entidades)
 6. [Endpoints Principales](#endpoints-principales)
    - [Autenticación](#autenticación)
@@ -215,7 +215,7 @@ A continuación, se describen los pasos básicos para levantar la aplicación lo
 
 En la base de datos PostgreSQL, se manejan varias tablas para dar soporte a la lógica de la aplicación. A continuación se muestra un **Diagrama ER (Entidades y Relaciones)** y la descripción de los modelos principales.
 
-### Diagrama ER (Mermaid)
+### Diagrama ER 
 
 ~~~mermaid
 erDiagram
