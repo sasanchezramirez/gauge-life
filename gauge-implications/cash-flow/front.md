@@ -4,6 +4,8 @@ title: "Front-End Cash Flow"
 permalink: /gauge-implications/cash-flow/front/
 ---
   
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/cash-flow/index/)
+
 
 Esta documentación describe la configuración, estructura y principales componentes del **Frontend** de la aplicación **Cashflow**. El objetivo es guiar a otros desarrolladores en la instalación, uso y mantenimiento del proyecto, así como brindar una visión general de la interfaz y sus pantallas.
 
@@ -229,3 +231,4 @@ Si deseas contribuir al **Frontend de Cashflow**:
 
 **Gracias por leer!** Para más información sobre la aplicación o reporte de errores, visita [GitHub - cashflow-front](https://github.com/sasanchezramirez/cashflow-front) o crea un issue en el repositorio.
 
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/cash-flow/index/)

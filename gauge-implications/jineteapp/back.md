@@ -343,3 +343,6 @@ class RegistrarTransaccionServiceTest {
 4. **Logs y monitoreo**:
    - Usar logs estructurados (SLF4J, Logback).
    - Integrar herramientas de monitoreo (Micrometer, Prometheus, etc.).
+
+---
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/jineteapp/index/)

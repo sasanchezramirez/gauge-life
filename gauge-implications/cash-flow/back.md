@@ -532,4 +532,4 @@ Si tienes dudas o preguntas, no dudes en crear un nuevo _issue_ en el [repositor
 
 ---
 
-Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/poop-manager/index/)
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/cash-flow/index/)

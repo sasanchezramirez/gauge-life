@@ -4,6 +4,7 @@ title: "Front-End Jineteapp"
 permalink: /gauge-implications/jineteapp/front/
 ---
   
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/jineteapp/index/)
 
 Este documento detalla la **arquitectura**, la **estructura** de ficheros, la **configuración** y las **funcionalidades** del frontend de **Jineteapp**.
 
@@ -339,3 +340,4 @@ server {
 
 ---
 
+Volver a [Documentación general]({{ site.baseurl }}/gauge-implications/jineteapp/index/)

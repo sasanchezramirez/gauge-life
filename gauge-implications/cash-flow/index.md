@@ -4,6 +4,12 @@ title: "Cash Flow"
 permalink: /gauge-implications/cash-flow/
 mermaid: true
 ---
+Aquí encontrarás la **documentación general** del proyecto, para los casos específicos puedes visitar la documentación específica para:
+
+- [Front]({{ site.baseurl }}/gauge-implications/cash-flow/front/)
+- [Back]({{ site.baseurl }}/gauge-implications/cash-flow/back/)
+- [Modelo]({{ site.baseurl }}/gauge-implications/cash-flow/model/)
+
 
 Este documento reúne la información esencial acerca de **Cashflow**, tanto a nivel de su arquitectura de software (frontend y backend), como de la configuración requerida para su despliegue en **AWS**. Se incluyen diagramas de la arquitectura interna del proyecto, diagramas de casos de uso y un diagrama de infraestructura para guiar la puesta en producción en la nube.
 
@@ -294,5 +300,7 @@ La presente documentación unifica:
 
 Con esta base, es posible **escalar el proyecto** de forma modular, manteniendo las ventajas de la **arquitectura hexagonal** y aprovechando los servicios de AWS para asegurar alta disponibilidad, confiabilidad y un proceso de entrega continuo.
 
-**¡Gracias por consultar la documentación de Cashflow!** Para dudas o sugerencias, se recomienda abrir un _issue_ en los repositorios de [Cashflow-Back](https://github.com/sasanchezramirez/cashflow-back) o [Cashflow-Front](https://github.com/sasanchezramirez/cashflow-front).  
+---
+
+Para dudas o sugerencias, se recomienda abrir un _issue_ en los repositorios de [Cashflow-Back](https://github.com/sasanchezramirez/cashflow-back) o [Cashflow-Front](https://github.com/sasanchezramirez/cashflow-front).  
 
