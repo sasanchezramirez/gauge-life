@@ -13,11 +13,11 @@ Este documento describe en profundidad la arquitectura, los endpoints, la config
 
 ## Tabla de Contenidos
 1. [Introducción](#introducción)
-2. [Arquitectura General](#arquitectura-general)
+2. [Arquitectura](#arquitectura)
 3. [Configuración de Entorno](#configuración-de-entorno)
 4. [Ejecución en Entorno Local](#ejecución-en-entorno-local)
 5. [Modelos de Datos](#modelos-de-datos)
-   - [Diagrama ER](#diagrama-er-)
+   - [Diagrama ER](#diagrama-er)
    - [Descripción de Entidades](#descripción-de-entidades)
 6. [Endpoints Principales](#endpoints-principales)
    - [Autenticación](#autenticación)
