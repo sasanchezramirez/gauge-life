@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "-"
+title: "La Corazonada"
 date: 2025-02-20 10:00:00 +0000
 categories: [GaugeExpressions, Literatura]
 tags: [Literatura]
@@ -8,19 +8,21 @@ tags: [Literatura]
 #   path: /assets/img/posts/fearless.png
 #   alt: Meadle - Pink Floyd.
 ---
-> «»
+> «And everything under the sun is in tune
 >
-> -
+> But the sun is eclipsed by the moon»
+>
+> -Eclipse, Pink Floyd
 
-Nacer con un estigma es pertenecer. Incluso la ausencia de él es, en esencia, una marca indeleble. C. de H. no fue la excepción. Desdibujó los límites de su mundo para reclamar nuevas experiencias. Allí, en ese amanecer [^1], la diosa de negras pupilas posó en él, con ternura, su mirada.
+Nacer con un estigma es pertenecer. Incluso la ausencia de él es, en esencia, una marca indeleble. C. de H. no fue la excepción. Desdibujó los límites de su mundo para reclamar nuevas experiencias. Allí, en ese amanecer, la diosa de negras pupilas posó en él, con ternura, su mirada.
 
-Mirada que, para entonces, aún era un efluvio inconmensurable de partículas que surgían desde sus negras singularidades, rozaban la existencia del otro y regresaban ávidas a su origen, intactas, inmutables, como si la diosa de blanca tez se bastara a sí misma [^2]. Aquella mirada significó el estigma en C. de H.
+Mirada que, para entonces, aún era un efluvio inconmensurable de partículas que surgían desde sus negras singularidades, rozaban la existencia del otro y regresaban ávidas a su origen, intactas, inmutables, como si la diosa de blanca tez se bastara a sí misma. Aquella mirada significó el estigma en C. de H.
 
 Entendió que solamente en sus sueños encontraba las señales de aquella marca, porque su mente cartesiana no le permitía asignar una naturaleza onírica a su realidad. En sus sueños, la diosa de estrellas dibujadas le tomaba de la mano y le permitía experimentar el júbilo de sentir el agua por su cuerpo, de existir junto con aquel sacro elemento de vida. En un genuino alarde de su naturaleza, la diosa de negras pupilas no le dio aquel fuego de dioses; en cambio, en sus sueños, le dio a probar el agua que completaba su existencia olímpica.
 
 Aquel hombre —si es que esa era su verdadera naturaleza— experimentaba su realidad alejado de aquellas sensaciones. Sus sueños pronto se convertirían en juguetes de su existencia. Decidió que sus sueños serían los que dibujaran los límites de su nueva realidad, aquella que se asomaba en aquel amanecer.
 
-Así, como todo mortal, C. de H. tenía que recorrer un camino. Aunque todos pensemos que un camino es aquel que se dibuja por los territorios, por el espacio, por nuestra tridimensionalidad, esto no es más que una asignación pobre de nuestra mente, pues un camino es aquello que se transita por el tiempo. C. de H. quiso alejarse de los guías utilitarios y prácticos, y se dirigió al bosque donde habitan los guías del alma. Se encontró con el tenor de cabellos dorados, aquel que habría de crear una escalera al cielo [^3]y con el chamán canario, quien fuese el dador de risas al mundo [^4]. Sobre una roca volcánica estaban ambos de pie, gozosos, conversando.
+Así, como todo mortal, C. de H. tenía que recorrer un camino. Aunque todos pensemos que un camino es aquel que se dibuja por los territorios, por el espacio, por nuestra tridimensionalidad, esto no es más que una asignación pobre de nuestra mente, pues un camino es aquello que se transita por el tiempo. C. de H. quiso alejarse de los guías utilitarios y prácticos, y se dirigió al bosque donde habitan los guías del alma. Se encontró con el tenor de cabellos dorados, aquel que habría de crear una escalera al cielo y con el chamán canario, quien fuese el dador de risas al mundo. Sobre una roca volcánica estaban ambos de pie, gozosos, conversando.
 
 —¿Habrá alguien que recuerde cómo reírse? —le preguntaba el de voz de seda al *pagliaccio*.
 
@@ -131,7 +133,8 @@ Aquella población se hallaba abatida por una guerra que no era suya, en donde s
 
 Con el ánimo compungido, C. de H. atravesó ese lugar, obligado por la ruta de su encomienda. Recorrió calles coloridas en cuyos muros se dubujaban historias de un porvenir que sus habitantes anhelaban con fervor. Ellos lo observaron con un júbilo contenido, pues sabían que un solo forastero no disiparía su mala hora.
 
-Unos niños que estaban por allí notaron que aquel viajero espontáneo llevaba en su cintura aquel líquido sagrado, del que sus padres les habían contado que corría por sus tierras formando majestuosas cascadas que brotaban entre las copas de los árboles y pequeños estanques de agua, donde las orillas se mezclaban con una naturaleza densa y plural: los mismos estanques dulces en los que los adultos volvían a ser niños y recobraban aquel sensato deseo de reír y amar.
+Unos niños que estaban por allí notaron que aquel viajero espontáneo llevaba en su cintura aquel líquido sagrado, el mismo del que sus padres les habían hablado tantas veces, recordándoles cómo, en tiempos pasados, corría por sus tierras formando majestuosas cascadas que brotaban entre las copas de los árboles y pequeños estanques de agua, donde las orillas se mezclaban con una naturaleza densa y plural: los mismos estanques dulces en los que, antaño, los adultos volvían a ser niños y recobraban aquel sensato deseo de reír y amar.
+
 Aquella sorpresa de los niños propició que el resto de la población anunciara que ese viajero traía consigo el ansiado tesoro que durante tanto tiempo habían estado esperando.
 
 —Tú no eres un navegante cualquiera —comentó uno de los habitantes al ver la intensidad en la mirada de C. de H.—. El estigma que llevas es evidente, como el nuestro. Nuestras vidas nada valen si estas montañas mueren. Vivimos en simbiosis con las aguas que, ojalá pronto, vuelvan a nutrir estas tierras. ¿Ves este dolor? La guerra trocó nuestros ríos claros en cauces de muerte y sangre. Forastero, te rogamos: danos el agua que guardas. ¡Haz que la vida renazca en este pueblo!
@@ -200,12 +203,3 @@ Hubo un silencio oscuro. La diosa prosiguió:
 
 —Dame *tiempo*. Es lo que te pido. Solo necesito todo el tiempo necesario para que tú, mortal, lo tomes y puedas estar a mi lado por la eternidad.
 
-
-
-
-
-
-[^1]: Del amancer Nitztcheano
-[^2]: De la definición griega de la luz
-[^3]: Robert Plant
-[^4]: Don Juan Ignacio Delgado Alemani
