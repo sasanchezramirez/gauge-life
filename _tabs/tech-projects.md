@@ -1,5 +1,5 @@
 ---
-title: "Gauge Implicatations"
+title: "Tech Projects"
 icon: fas fa-cogs
 order: 2
 ---
@@ -12,6 +12,7 @@ order: 2
 >
 > — Nietzsche, F.: Así habló Zaratustra. De la superación de mí mismo, p. 171-172.
 
+# *Gauge Implications*
 
 Crear es una expresión más de mi existencia. Mi voluntad creadora es presentada como *Gauge Implications*, extendiendo o heredando[^1] el concepto de *[Gauge Life]({{site.baseurl}}/about)*, en donde esta "implicación" es lo que me da la libertad de **aceptar** esta todas las ideas y deseos de aprender haciendo.
 
