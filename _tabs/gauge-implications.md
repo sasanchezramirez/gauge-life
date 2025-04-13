@@ -26,9 +26,9 @@ Cada uno de estos proyectos surgieron desde un profundo aburrimiento, desatando 
     </div>
     
     <div class="project-tech">
-      <span class="tech-tag">React</span>
-      <span class="tech-tag">Node.js</span>
-      <span class="tech-tag">MongoDB</span>
+      <span class="tech-tag">Angular</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">Postgress</span>
     </div>
 
     <p class="project-description">
@@ -85,14 +85,45 @@ Cada uno de estos proyectos surgieron desde un profundo aburrimiento, desatando 
 
   <div class="project-card">
     <div class="project-header">
+      <h3>Time Calculator</h3>
+      <span class="project-status">Producción</span>
+    </div>
+    
+    <div class="project-tech">
+      <span class="tech-tag">Angular</span>
+      <span class="tech-tag">FastAPI</span>
+    </div>
+
+    <p class="project-description">
+      Esto es fue simplemente un juguete para calmar mi angustia frente al paso del tiempo.
+    </p>
+
+    <div class="project-metrics">
+      <div class="metric">
+        <span class="number">2025</span>
+        <span class="label">Año</span>
+      </div>
+      <div class="metric">
+        <span class="number">v1.0</span>
+        <span class="label">Versión</span>
+      </div>
+    </div>
+
+    <a href="{{ site.baseurl }}/gauge-implications/time-calculator" class="project-link">
+      Explorar Proyecto →
+    </a>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
       <h3>Cash Flow</h3>
       <span class="project-status">MVP</span>
     </div>
     
     <div class="project-tech">
-      <span class="tech-tag">Vue.js</span>
-      <span class="tech-tag">Express</span>
-      <span class="tech-tag">PostgreSQL</span>
+      <span class="tech-tag">Angular</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">Postgress</span>
     </div>
 
     <p class="project-description">
@@ -122,9 +153,9 @@ Cada uno de estos proyectos surgieron desde un profundo aburrimiento, desatando 
     </div>
     
     <div class="project-tech">
-      <span class="tech-tag">Three.js</span>
-      <span class="tech-tag">WebGL</span>
-      <span class="tech-tag">D3.js</span>
+      <span class="tech-tag">Angular</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">Postgress</span>
     </div>
 
     <p class="project-description">
