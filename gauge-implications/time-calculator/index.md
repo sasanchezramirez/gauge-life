@@ -8,11 +8,11 @@ math: true
 ---
 
 
-# Documentación Técnica: Calculadora del Tiempo Relativista
+# Documentación Técnica.
 
 ## Introducción
 
-La calculadora del tiempo relativista es una herramienta que permite calcular la diferencia temporal entre dos cuerpos que viajan a diferentes velocidades durante un tiempo de referencia. El objetivo es mostrar cómo el tiempo propio de cada cuerpo varía según los postulados de la relatividad especial, en particular mediante el uso del factor de Lorentz.
+La calculadora del tiempo relativista es una herramienta que permite calcular la diferencia temporal entre dos cuerpos que viajan a diferentes velocidades durante un tiempo de referencia (el tiempo de viaje). El objetivo es mostrar cómo el tiempo propio de cada cuerpo varía según los postulados de la relatividad especial, en particular mediante el uso del factor de Lorentz.
 
 ## Flujo del Proceso
 
@@ -22,7 +22,7 @@ La calculadora del tiempo relativista es una herramienta que permite calcular la
    - Velocidad del cuerpo 1.
    - Velocidad del cuerpo 2.
    - Tiempo de referencia (en segundos, desde el sistema inercial).
-2. El frontend estructura estos datos y realiza una solicitud HTTP `POST` al endpoint expuesto por el backend.
+2. El frontend estructura estos datos (convierte la velocidades a $$m/s$$) y realiza una solicitud HTTP `POST` al endpoint expuesto por el backend.
 3. Una vez obtenida la respuesta, muestra:
    - El tiempo propio de cada cuerpo.
    - La diferencia de tiempo entre ellos.
@@ -30,7 +30,7 @@ La calculadora del tiempo relativista es una herramienta que permite calcular la
 ### Backend (FastAPI + Arquitectura Hexagonal)
 
 1. **Entry Point (Adapter de API)**:
-   - Endpoint `POST /calculate-time`.
+   - Endpoint `POST time/time-comparision`.
    - Recibe los datos como JSON.
    - Valida el rango de velocidades (v < c).
    - Convierte los datos al DTO de entrada.
@@ -101,44 +101,19 @@ flowchart TD
 - Soporte para efectos de relatividad general.
 - Comparación entre múltiples cuerpos.
 - Visualización gráfica de los tiempos en el frontend.
-- Exportación de resultados en PDF o CSV.
 
 ---
 
-## Notas
-[^1]:  Todas las velocidades deben expresarse como fracción de la velocidad de la luz (`v/c`), es decir, valores entre 0 y 1.
+
 
 ## Repositorio y Código Fuente
 
-Todo el código fuente de este proyecto se encuentra disponible en GitHub. Para acceder a la implementación completa, incluyendo todos los detalles de configuración, tests y documentación adicional, visita nuestro repositorio:
+Todo el código fuente de este proyecto se encuentra disponible en GitHub. Para acceder a la implementación completa, incluyendo todos los detalles de configuración, puedes visitar el repositorio:
 
-[GitHub: Time-Calculator](https://github.com/ejemplo/time-calculator)
+[Time-Calculator: Back](https://github.com/sasanchezramirez/time-back)
 
-## Estructura del Proyecto
+[Time-Calculator: Front](https://github.com/sasanchezramirez/time-front)
 
-El proyecto sigue una arquitectura clara que separa las responsabilidades:
-
-```
-time-calculator/
-├── frontend/                # Aplicación Angular
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── components/
-│   │   │   │   ├── services/
-│   │   │   │   └── models/
-│   │   │   └── ...
-│   └── ...
-├── backend/                 # API FastAPI con arquitectura hexagonal
-│   ├── src/
-│   │   ├── application/     # Casos de uso
-│   │   │   └── ...
-│   │   ├── domain/          # Lógica de negocio
-│   │   │   └── ...
-│   │   ├── infrastructure/  # Adaptadores
-│   │   └── api/             # Puntos de entrada API
-│   └── ...
-└── docs/                    # Documentación adicional
-```
 
 ## Ejemplos de Código Clave
 
@@ -194,8 +169,11 @@ Para una comprensión completa de la implementación, se recomienda revisar el c
 
 - Implementación completa del frontend en Angular
 - Código backend con arquitectura hexagonal
-- Tests unitarios y de integración
 - Instrucciones detalladas de instalación y configuración
-- Documentación adicional sobre la teoría física aplicada
 
-Este proyecto es un excelente ejemplo de cómo los principios físicos de la relatividad especial pueden ser implementados en una aplicación web moderna, manteniendo una arquitectura limpia y separación de responsabilidades.
+¿Tienes alguna sugerencia? Yo encantado de recibirla.
+
+---
+
+## Notas
+[^1]:  Todas las velocidades deben expresarse como fracción de la velocidad de la luz (`v/c`), es decir, valores entre 0 y 1.
