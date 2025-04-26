@@ -168,7 +168,7 @@ Cada uno de estos proyectos surgieron desde un profundo aburrimiento, desatando 
         <span class="label">Año</span>
       </div>
       <div class="metric">
-        <span class="number">POC</span>
+        <span class="number">Training</span>
         <span class="label">Fase</span>
       </div>
     </div>
