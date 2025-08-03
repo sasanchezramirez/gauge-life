@@ -49,7 +49,7 @@ image:
     <div class="stanza" style="margin-bottom: 1.4em;">
       Y de repente estás tú, nuevamente solo,<br> 
       en aquel amanecer en donde te despojas de tu estigma,<br>
-      y te muestras al mundo finalmente libre, y no <i>libre de</i> sino <i>libre para</i><br>
+      y te muestras al mundo finalmente libre, y no <i>libre de</i> sino <i>libre para</i>,<br>
       porque crear es tu verdadera voluntad,<br>
       porque crear es tu verdadera libertad.
     </div>
