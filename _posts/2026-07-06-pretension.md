@@ -9,9 +9,13 @@ image:
   alt: Casi.
 ---
 > «For all the time spent in that room 
+>
 > The doll's house darkness old perfume
+>
 > And fairy stories held me high
+>
 > On clouds of sunlight floating by»
+>
 >
 > — Matilda Mother, Pink Floyd (Syd)
 
@@ -22,7 +26,7 @@ image:
 
   <div style="line-height: 1.6;">
     <div class="stanza" style="margin-bottom: 1.4em;">
-      Por todo ese tiempo sufrido bajo la sombra de paredes atadas a mi existencia<br>
+      Por todo ese tiempo sufrido bajo la sombra de paredes atadas a mi existencia,<br>
       con la ingravidez de mil ilusiones expuestas a la luz del azar.
     </div>
 
